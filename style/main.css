@@ -1,0 +1,23 @@
+img{
+	width: 500px;
+	height:200px;
+	border:1px solid #f1f1f1;
+	position: absolute;
+	z-index: 1;
+	/*display: none;*/
+	left: 0;
+}
+
+#slide{
+	width: 500px;
+	height: 200px;
+	margin:0 auto;
+	overflow: hidden;
+	position: relative;
+}
+
+body{
+	background-color:black; 
+}
+
+/*o filha da mae nao mostrou a classe active do projeto*/
