@@ -7,22 +7,45 @@
 		<link rel="stylesheet" type="text/css" href="style/main.css">
 		<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 	</head>
-	<body>
-		<p class="jumbotron text-center text-uppercase">Slide com Jquery puro</p>
+	<body class="bg-dark">
+		<p class="text-center text-uppercase text-light h2 mt-4 mb-4">
+			Slide com Jquery puro
+		</p>
 		<!-- Aprendendo a fazer slides usando jquery -->
 		<!-- projeto incompleto pois o burro do cara não mostrou a classe active para
 		inserir no jquery -->
-		<div>
-			<figure id='slide'>
-				<img src="img/01.jpg" alt='1imagem'>
-				<img src="img/02.jpg" alt='2imagem'>
-				<img src="img/03.jpg" alt='3imagem'>
-				<img src="img/04.jpg" alt='4imagem'>
-				<img src="img/05.jpg" alt='5imagem'>
-			</figure>
+		<div class="slider">
+			<ul class="slides">
+				<li class="slide"><img src="img/01.jpg" alt='1imagem'></li>
+				<li class="slide"><img src="img/02.jpg" alt='2imagem'></li>
+				<li class="slide"><img src="img/03.jpg" alt='3imagem'></li>
+				<li class="slide"><img src="img/04.jpg" alt='4imagem'></li>
+				<li class="slide"><img src="img/05.jpg" alt='5imagem'></li>
+			</ul>
 		</div>
 	</body>
 	<script type="text/javascript">
-		//Funcão do slide
+		//Estudando fazendo slide com jquery
+		// Slide quase pronto para estudo
+		// Estudar muito essa função a baixo
+
+		let currentSlide = 1;
+		let $slider = $(".slides");
+		let sliderCount = $slider.children().length;
+  		
+  		console.log(sliderCount);
+
+		setInterval(function(){
+			$slider.animate({
+				marginLeft:'-=900px'
+			},800, function(){
+				currentSlide++;
+				if (currentSlide === sliderCount) {
+					currentSlide = 1;
+					$(this).css("margin-left","0px");
+				}
+			})
+		},2000)
+
 	</script>
 </html>
